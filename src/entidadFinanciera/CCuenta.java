@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package tarea4endes23;
+package entidadFinanciera;
 
 
 public class CCuenta {
@@ -19,7 +19,13 @@ public class CCuenta {
     public CCuenta()
     {
     }
-
+/**
+ * 
+ * @param nom
+ * @param cue
+ * @param sal
+ * @param tipo 
+ */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -34,9 +40,10 @@ public class CCuenta {
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
-            throw new Exception("No se puede ingresar una cantidad negativa");
+            throw new Exception(ERRORCANTIDADNEGATIVA );
         saldo = saldo + cantidad;
     }
+    private static final String ERRORCANTIDADNEGATIVA = "No se puede ingresar una cantidad negativa";
 
     public void retirar(double cantidad) throws Exception
     {
